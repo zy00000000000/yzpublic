@@ -1,0 +1,25 @@
+Host *
+  ForwardAgent yes
+
+Host jump_host_vm1
+ Hostname 86.50.252.101
+ User ubuntu
+ Port 22
+ IdentityFile ~/terraform/team
+
+Host vm2
+  Hostname 192.168.1.7
+  User ubuntu
+  ProxyJump jump_host_vm1
+  IdentityFile ~/terraform/team
+Host vm3
+  Hostname 192.168.1.11
+  User ubuntu
+  ProxyJump jump_host_vm1
+  IdentityFile ~/terraform/team
+Host vm4
+  Hostname 192.168.1.6
+  User ubuntu
+  ProxyJump jump_host_vm1
+  IdentityFile ~/terraform/team
+
